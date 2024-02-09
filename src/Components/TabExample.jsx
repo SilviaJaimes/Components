@@ -93,5 +93,5 @@ export default function TabExample({title1, content1, title2, code, color, title
                     </div>
                 </Tab>}
         </Tabs>
-    )
+    );
 } 

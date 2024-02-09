@@ -15,5 +15,5 @@ export default function Modal({onSubmit, onCancel, onClose}){
                 </div>
             </div>
         </div>
-    )
+    );
 }

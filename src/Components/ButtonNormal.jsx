@@ -3,5 +3,5 @@ export default function ButtonNormal({className, Button}){
         <button className={className}>
             <p>{Button}</p>
         </button>
-    )
+    );
 }

@@ -99,11 +99,7 @@ export default function SidebarData({ toggle }) {
     return (
         <div className="">
             {datas.map((data, index) => (
-                <Link
-                    to={data.path} 
-                    className={`${toggle ? "last:w-[3rem]" : "last:w-[12rem]"} sidebar flex items-center mt-2 p-2 rounded-lg cursor-pointer hover:bg-black transition-all duration-500 last:absolute left-4 bottom-4`}
-                    key={index}
-                >
+                <Link to={data.path}  className={`${toggle ? "last:w-[3rem]" : "last:w-[12rem]"} sidebar flex items-center mt-2 p-2 rounded-lg cursor-pointer hover:bg-black transition-all duration-500 last:absolute left-4 bottom-4`} key={index}>
                     <div className="mr-8 text-[1.3rem] text-white">
                         {data.icon}
                     </div>

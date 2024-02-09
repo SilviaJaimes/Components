@@ -2,6 +2,71 @@ import TabExample from "../Components/TabExample";
 import { useState } from "react";
 
 export default function Checkbox() {
+    const sizes = [
+        {
+            name: "Small",
+            size: "sm"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
+    const radius = [
+        {
+            name: "None",
+            radius: "none"
+        },
+        {
+            name: "Smll",
+            radius: "sm"
+        },
+        {
+            name: "Medium",
+            radius: "md"
+        },
+        {
+            name: "Large",
+            radius: "lg"
+        },
+        {
+            name: "Full",
+            radius: "full"
+        }
+    ];
+
     const code = useState(
         `
 export default function CheckBox(){
@@ -19,20 +84,29 @@ export default function CheckBox(){
     const code1 = useState(
         `
 export default function Chips(){
+    const sizes = [
+        {
+            name: "Small",
+            size: "sm"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <label htmlFor="" className="text-[#fff] text-[15px] flex items-center">
-                <input type="checkbox" className="h-3 w-3 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Small
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Medium
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[24px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Large
-            </label>
+            {sizes.map((item, index) => (
+                <label htmlFor="" key={index} className="text-[#fff] text-{item.size} flex items-center">
+                    <input type="checkbox" className="h-3 w-3 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
+                    {item.name}
+                </label>
+            ))}
         </div>
     );
 }
@@ -41,28 +115,37 @@ export default function Chips(){
     const code2 = useState(
         `
 export default function Chips(){
+    const radius = [
+        {
+            name: "None",
+            radius: "none"
+        },
+        {
+            name: "Smll",
+            radius: "sm"
+        },
+        {
+            name: "Medium",
+            radius: "md"
+        },
+        {
+            name: "Large",
+            radius: "lg"
+        },
+        {
+            name: "Full",
+            radius: "full"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 rounded-full border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Full
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 rounded-lg border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Large
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Medium
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 rounded-sm border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Small
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-5 w-5 border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                None
-            </label>
+            {radius.map((item, index) => (
+                <label htmlFor="" key={index} className="text-[#fff] text-[20px] flex items-center">
+                    <input type="checkbox" className="h-5 w-5 rounded-{item.radius} border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer"/>
+                    {item.name}
+                </label>
+            ))}
         </div>
     );
 }
@@ -71,32 +154,41 @@ export default function Chips(){
     const code3 = useState(
         `
 export default function Chips(){
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-default checked:border-transparent mr-2 cursor-pointer" />
-                Default
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                Primary
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-secondary checked:border-transparent mr-2 cursor-pointer" />
-                Secondary
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-success checked:border-transparent mr-2 cursor-pointer" />
-                Success
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-warning checked:border-transparent mr-2 cursor-pointer" />
-                Warning
-            </label>
-            <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-danger checked:border-transparent mr-2 cursor-pointer" />
-                Danger
-            </label>
+            {color.map((item, index) => (
+                <label htmlFor="" key={index} className="text-[#fff] text-[20px] flex items-center">
+                    <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-{item.color} checked:border-transparent mr-2 cursor-pointer"/>
+                    {item.name}
+                </label>
+            ))}
         </div>
     );
 }
@@ -129,18 +221,12 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <label htmlFor="" className="text-[#fff] text-[15px] flex items-center">
-                            <input type="checkbox" className="h-3 w-3 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Small
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Medium
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[24px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Large
-                        </label>
+                        {sizes.map((item, index) => (
+                            <label htmlFor="" key={index} className={`text-[#fff] text-${item.size} flex items-center`}>
+                                <input type="checkbox" className="h-3 w-3 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
+                                {item.name}
+                            </label>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -154,26 +240,12 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 rounded-full border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Full
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 rounded-lg border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Large
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 rounded-md border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Medium
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 rounded-sm border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Small
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-5 w-5 border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            None
-                        </label>
+                        {radius.map((item, index) => (
+                            <label htmlFor="" key={index} className="text-[#fff] text-[20px] flex items-center">
+                                <input type="checkbox" className={`h-5 w-5 rounded-${item.radius} border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer`}/>
+                                {item.name}
+                            </label>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -187,30 +259,12 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-default checked:border-transparent mr-2 cursor-pointer" />
-                            Default
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-primary checked:border-transparent mr-2 cursor-pointer" />
-                            Primary
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-secondary checked:border-transparent mr-2 cursor-pointer" />
-                            Secondary
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-success checked:border-transparent mr-2 cursor-pointer" />
-                            Success
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-warning checked:border-transparent mr-2 cursor-pointer" />
-                            Warning
-                        </label>
-                        <label htmlFor="" className="text-[#fff] text-[20px] flex items-center">
-                            <input type="checkbox" className="h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-danger checked:border-transparent mr-2 cursor-pointer" />
-                            Danger
-                        </label>
+                        {color.map((item, index) => (
+                            <label htmlFor="" key={index} className="text-[#fff] text-[20px] flex items-center">
+                                <input type="checkbox" className={`h-4 w-4 rounded border border-gray-300 appearance-none checked:bg-${item.color} checked:border-transparent mr-2 cursor-pointer`} />
+                                {item.name}
+                            </label>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -218,5 +272,5 @@ export default function Chips(){
                 color="secondary"
             />
         </div>
-    )
+    );
 } 

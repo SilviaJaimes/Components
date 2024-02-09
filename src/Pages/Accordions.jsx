@@ -21,7 +21,7 @@ export default function Accordions(){
             title: "Accordion 3",
             content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas exercitationem pariatur eligendi, minima fugit blanditiis voluptatibus quam officiis incidunt, sit illum beatae, molestiae recusandae quasi ex omnis iure magnam tempore?"
         }
-    ]
+    ];
 
     const [selected, setSelected] = useState(null)
 
@@ -30,7 +30,7 @@ export default function Accordions(){
             return setSelected(null)
         }
         setSelected(i)
-    }
+    };
 
     return(
         <div className="accordion w-full">
@@ -46,7 +46,7 @@ export default function Accordions(){
                 </div>
             ))}
         </div>
-    )
+    );
 }
     ` );
 

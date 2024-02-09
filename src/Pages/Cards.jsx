@@ -72,7 +72,7 @@ export default function Cards(){
 export default function DividerNormal(){
     return(
         <div className="border-t border-[#999999ab] my-2"></div>
-    )
+    );
 }
     `);
 
@@ -80,7 +80,6 @@ export default function DividerNormal(){
         <div className="car mt-[80px] mx-[100px]">
             <h2 className="title-component text-[#ffffff] text-[40px]">Card</h2>
             <p className="text-[#ffffff] text-[17px] mt-[20px] mb-[20px]">Cards are used to show information in a different and original way.</p>
-
             <h3 className="text-[#ffffff] text-[20px] font-bold mt-10">Usage</h3>
 
             <TabExample
@@ -154,5 +153,5 @@ export default function DividerNormal(){
                 color="secondary"
             />
         </div>
-    )
+    );
 }

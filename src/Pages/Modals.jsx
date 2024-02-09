@@ -12,7 +12,7 @@ export default function Modals(){
     const [openModal, setOpenModal] = useState(false);
     const handleButtonClick = () => {
         setOpenModal(false)
-    }
+    };
 
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
@@ -44,20 +44,19 @@ export default function Modal({onSubmit, onCancel, onClose}){
                 </div>
             </div>
         </div>
-    )
+    );
 }
     `);
 
     const [openModal, setOpenModal] = useState(false);
     const handleButtonClick = () => {
         setOpenModal(false)
-    }
+    };
 
     return(
         <div className="modal mt-[80px] mx-[100px]">
             <h2 className="title-component text-[#ffffff] text-[40px]">Modal</h2>
             <p className="text-[#ffffff] text-[17px] mt-[20px] mb-[20px]">The modal is used to display information in a box that is opened by a button.</p>
-
             <h3 className="text-[#ffffff] text-[20px] font-bold mt-10">Usage</h3>
 
             <TabExample
@@ -77,5 +76,5 @@ export default function Modal({onSubmit, onCancel, onClose}){
                 code1={code0}
             />
         </div>
-    )
+    );
 }

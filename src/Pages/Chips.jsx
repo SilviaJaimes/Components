@@ -2,6 +2,71 @@ import TabExample from "../Components/TabExample";
 import { useState } from "react";
 
 export default function Chips() {
+    const sizes = [
+        {
+            name: "Small",
+            size: "sm"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
+    const radius = [
+        {
+            name: "None",
+            radius: "none"
+        },
+        {
+            name: "Smll",
+            radius: "sm"
+        },
+        {
+            name: "Medium",
+            radius: "md"
+        },
+        {
+            name: "Large",
+            radius: "lg"
+        },
+        {
+            name: "Full",
+            radius: "full"
+        }
+    ];
+
     const code = useState(
         `
 export default function Chips(){
@@ -18,17 +83,28 @@ export default function Chips(){
     const code1 = useState(
         `
 export default function Chips(){
+    const sizes = [
+        {
+            name: "Small",
+            size: "sm"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <div className="text-[#fff] text-[13px] bg-[#262626] py-1 px-4 rounded-full ">
-                Small
-            </div>
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-full">
-                Medium
-            </div>
-            <div className="text-[#fff] text-[22px] bg-[#262626] py-1 px-4 rounded-full">
-                Large
-            </div>
+            {sizes.map((item, index) => (
+                <div key={index} className="flex justify-center text-[#fff] text-{item.size} bg-[#262626] py-1 px-4 rounded-full">
+                    {item.name}
+                </div>
+            ))}
         </div>
     );
 }
@@ -37,23 +113,36 @@ export default function Chips(){
     const code2 = useState(
         `
 export default function Chips(){
+    const radius = [
+        {
+            name: "None",
+            radius: "none"
+        },
+        {
+            name: "Smll",
+            radius: "sm"
+        },
+        {
+            name: "Medium",
+            radius: "md"
+        },
+        {
+            name: "Large",
+            radius: "lg"
+        },
+        {
+            name: "Full",
+            radius: "full"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-full">
-                Full
-            </div>
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-lg">
-                Large
-            </div>
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-md">
-                Medium
-            </div>
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-sm">
-                Small
-            </div>
-            <div className="text-[#fff] text-[17px] bg-[#262626] py-1 px-4 ">
-                None
-            </div>
+            {radius.map((item, index) => (
+                <div key={index} className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-{item.radius}">
+                    {item.name}
+                </div>
+            ))}
         </div>
     );
 }
@@ -62,26 +151,40 @@ export default function Chips(){
     const code3 = useState(
         `
 export default function Chips(){
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 items-center">
-            <div className="text-[#000] text-[17px] bg-default py-1 px-4 rounded-full">
-                Default
-            </div>
-            <div className="text-[#fff] text-[17px] bg-primary py-1 px-4 rounded-full">
-                Primary
-            </div>
-            <div className="text-[#fff] text-[17px] bg-secondary py-1 px-4 rounded-full">
-                Secondary
-            </div>
-            <div className="text-[#000] text-[17px] bg-success py-1 px-4 rounded-full">
-                Success
-            </div>
-            <div className="text-[#000] text-[17px] bg-warning py-1 px-4 rounded-full">
-                Warning
-            </div>
-            <div className="text-[#fff] text-[17px] bg-danger py-1 px-4 rounded-full">
-                Danger
-            </div>
+            {color.map((item, index) => (
+                <div className"flex justify-center text-[#000] text-[17px] bg-{item.color} py-1 px-4 rounded-full">
+                    {item.name}
+                </div>
+            ))}
         </div>
     );
 }
@@ -138,15 +241,11 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <div className="flex justify-center text-[#fff] text-[13px] bg-[#262626] py-1 px-4 rounded-full ">
-                            Small
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-full">
-                            Medium
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[22px] bg-[#262626] py-1 px-4 rounded-full">
-                            Large
-                        </div>
+                        {sizes.map((item, index) => (
+                            <div key={index} className={`flex justify-center text-[#fff] text-${item.size} bg-[#262626] py-1 px-4 rounded-full`}>
+                                {item.name}
+                            </div>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -160,21 +259,11 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-full">
-                            Full
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-lg">
-                            Large
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-md">
-                            Medium
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-sm">
-                            Small
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 ">
-                            None
-                        </div>
+                        {radius.map((item, index) => (
+                            <div key={index} className={`flex justify-center text-[#fff] text-[17px] bg-[#262626] py-1 px-4 rounded-${item.radius}`}>
+                                {item.name}
+                            </div>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -188,24 +277,11 @@ export default function Chips(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <div className="flex justify-center text-[#000] text-[17px] bg-default py-1 px-4 rounded-full">
-                            Default
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-primary py-1 px-4 rounded-full">
-                            Primary
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-secondary py-1 px-4 rounded-full">
-                            Secondary
-                        </div>
-                        <div className="flex justify-center text-[#000] text-[17px] bg-success py-1 px-4 rounded-full">
-                            Success
-                        </div>
-                        <div className="flex justify-center text-[#000] text-[17px] bg-warning py-1 px-4 rounded-full">
-                            Warning
-                        </div>
-                        <div className="flex justify-center text-[#fff] text-[17px] bg-danger py-1 px-4 rounded-full">
-                            Danger
-                        </div>
+                        {color.map((item, index) => (
+                            <div key={index} className={`flex justify-center text-[#000] text-[17px] bg-${item.color} py-1 px-4 rounded-full`}>
+                                {item.name}
+                            </div>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -241,5 +317,5 @@ export default function Chips(){
                 color="secondary"
             />
         </div>
-    )
+    );
 }

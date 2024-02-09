@@ -2,6 +2,48 @@ import TabExample from "../Components/TabExample";
 import { useState } from "react";
 
 export default function Links() {
+    const sizes = [
+        {
+            name: "Small",
+            size: "xs"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
     const code = useState(
         `
 export default function Links(){
@@ -16,11 +58,26 @@ export default function Links(){
     const code1 = useState(
         `
 export default function Links(){
+    const sizes = [
+        {
+            name: "Small",
+            size: "sm"
+        },
+        {
+            name: "Medium",
+            size: "base"
+        },
+        {
+            name: "Large",
+            size: "lg"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 border-[1px] items-center">
-            <a href="" className="text-[15px] text-primary hover:text-sky-800">Small</a>
-            <a href="" className="text-[18px] text-primary hover:text-sky-800">Medium</a>
-            <a href="" className="text-[22px] text-primary hover:text-sky-800">Large</a>
+            {sizes.map((item, index) => (
+                <a key={index} href="" className="text-{item.size} text-primary hover:text-sky-800">{item.name}</a>
+            ))}
         </div>
     );
 }
@@ -29,14 +86,38 @@ export default function Links(){
     const code2 = useState(
         `
 export default function Links(){
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 border-[1px] items-center">
-            <a href="" className="text-default hover:text-zinc-600">Foreground</a>
-            <a href="" className="text-primary hover:text-sky-800">Primary</a>
-            <a href="" className="text-secondary hover:text-violet-900">Secondary</a>
-            <a href="" className="text-success hover:text-green-800">Success</a>
-            <a href="" className="text-warning hover:text-yellow-800">Warning</a>
-            <a href="" className="text-danger hover:text-rose-900">Danger</a>
+            {color.map((item, index) => (
+                <a key={index} href="" className="text-{item.color} hover:text-zinc-600">{item.name}</a>
+            ))}
         </div>
     );
 }
@@ -78,44 +159,43 @@ export default function Links(){
     const code5 = useState(
         `
 export default function Links(){
+    const color = [
+        {
+            name: "Default",
+            color: "default"
+        },
+        {
+            name: "Primary",
+            color: "primary"
+        },
+        {
+            name: "Secondary",
+            color: "secondary"
+        },
+        {
+            name: "Success",
+            color: "success"
+        },
+        {
+            name: "Warning",
+            color: "warning"
+        },
+        {
+            name: "Danger",
+            color: "danger"
+        }
+    ];
+
     return(
         <div className="flex gap-4 mt-4 p-6 border-[1px] items-center">
-            <div className="flex text-default hover:text-zinc-600 gap-2 text-[18px]">
-                <a href="">Foreground</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
-            <div className="flex text-primary hover:text-sky-800 gap-2 text-[18px]">
-                <a href="">Primary</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
-            <div className="flex text-secondary hover:text-violet-900 gap-2 text-[18px]">
-                <a href="">Secondary</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
-            <div className="flex text-success hover:text-green-800 gap-2 text-[18px]">
-                <a href="">Success</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
-            <div className="flex text-warning hover:text-yellow-800 gap-2 text-[18px]">
-                <a href="">Warning</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
-            <div className="flex text-danger hover:text-rose-900 gap-2 text-[18px]">
-                <a href="">Danger</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                </svg>
-            </div>
+            {color.map((item, index) => (
+                <div key={index} className="flex text-{item.color} hover:text-zinc-600 gap-2 text-[18px]">
+                    <a href="">{item.name}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                        <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
+                    </svg>
+                </div>
+            ))}
         </div>
     );
 }
@@ -161,9 +241,9 @@ export default function Links(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <a href="" className="text-[15px] text-primary hover:text-sky-800">Small</a>
-                        <a href="" className="text-[18px] text-primary hover:text-sky-800">Medium</a>
-                        <a href="" className="text-[22px] text-primary hover:text-sky-800">Large</a>
+                        {sizes.map((item, index) => (
+                            <a key={index} href="" className={`text-${item.size} text-primary hover:text-sky-800`}>{item.name}</a>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -177,12 +257,9 @@ export default function Links(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <a href="" className="text-default hover:text-zinc-600">Foreground</a>
-                        <a href="" className="text-primary hover:text-sky-800">Primary</a>
-                        <a href="" className="text-secondary hover:text-violet-900">Secondary</a>
-                        <a href="" className="text-success hover:text-green-800">Success</a>
-                        <a href="" className="text-warning hover:text-yellow-800">Warning</a>
-                        <a href="" className="text-danger hover:text-rose-900">Danger</a>
+                        {color.map((item, index) => (
+                            <a key={index} href="" className={`text-${item.color} hover:text-zinc-600`}>{item.name}</a>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -235,42 +312,14 @@ export default function Links(){
                 title1="Component"
                 content1={
                     <div className="media grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4 p-6 border-[1px] border-zinc-700 rounded-lg items-center">
-                        <div className="flex text-default hover:text-zinc-600 gap-2 text-[18px]">
-                            <a href="">Foreground</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div className="flex text-primary hover:text-sky-800 gap-2 text-[18px]">
-                            <a href="">Primary</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div className="flex text-secondary hover:text-violet-900 gap-2 text-[18px]">
-                            <a href="">Secondary</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div className="flex text-success hover:text-green-800 gap-2 text-[18px]">
-                            <a href="">Success</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div className="flex text-warning hover:text-yellow-800 gap-2 text-[18px]">
-                            <a href="">Warning</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div className="flex text-danger hover:text-rose-900 gap-2 text-[18px]">
-                            <a href="">Danger</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
+                        {color.map((item, index) => (
+                            <div key={index} className={`flex text-${item.color} hover:text-zinc-600 gap-2 text-[18px]`}>
+                                <a href="">{item.name}</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                    <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                        ))}
                     </div>
                 }
                 title2="Code"
@@ -297,5 +346,5 @@ export default function Links(){
                 color="secondary"
             />
         </div >
-    )
+    );
 }
