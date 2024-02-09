@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-background\/70 {
+    background-color: hsl(var(--nextui-background) / 0);
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.title {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.content {
+    color: #ffffff91;
+    font-size: 17px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+    padding-top: 10px;
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+.title-component {
+    font-family: 'Jost', sans-serif;
+}
+
+@media (max-width: 1200px) {
+    .accordio,
+    .avata,
+    .butto,
+    .car,
+    .check,
+    .chip,
+    .divi,
+    .im,
+    .inpu,
+    .modal {
+        margin: 40px 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .accordio,
+    .avata,
+    .butto,
+    .car,
+    .check,
+    .chip,
+    .divi,
+    .im,
+    .inpu,
+    .modal {
+        margin: 20px 20px;
+    }
+
+    .title-component {
+        font-size: 30px;
+    }
+
+    .media {
+        padding: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .titles {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 750px) {
+    .media-cod {
+        width: 420px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .media-cod {
+        width: 312px;
+        margin-right: 10px;
+    }
+
+    .modal-container {
+        width: 350px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 456px) {
+    .accordio,
+    .avata,
+    .butto,
+    .car,
+    .check,
+    .chip,
+    .divi,
+    .im,
+    .inpu,
+    .modal {
+        margin: 40px 10px;
+    }
+
+    .title-component {
+        font-size: 22px;
+    }
+
+    .media {
+        width: 200px;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding: 10px;
+    }
+
+    .modal-container {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .titles {
+        font-size: 14px;
+    }
+}
